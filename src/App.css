@@ -4,10 +4,11 @@
 
 .App-header {
   background-color: #282c34;
-  align-items: center;
-  color: white;
+  padding-bottom: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header .title {
+  color: white;
+  padding-top: 30px;
+  margin-bottom: 30px;
 }
