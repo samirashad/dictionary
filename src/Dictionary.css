@@ -1,3 +1,13 @@
 .inputKeyWord {
-  margin-left: 10px;
+  margin-right: 20px;
+}
+.searchForm {
+  background-color: #282c34;
+  padding-bottom: 20px;
+}
+
+.results {
+  max-width: 800px;
+  margin: auto;
+  padding-top: 20px;
 }
