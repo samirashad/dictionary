@@ -1,13 +1,25 @@
 .inputKeyWord {
   margin-right: 20px;
+  width: 45%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  padding-left: 10px;
 }
+
 .searchForm {
-  background-color: #282c34;
   padding-bottom: 20px;
 }
 
 .results {
   max-width: 800px;
   margin: auto;
-  padding-top: 20px;
+}
+
+section {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin-top: 20px;
 }

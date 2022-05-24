@@ -1,0 +1,25 @@
+.definition {
+  color: blue;
+  font-size: 15px;
+}
+
+.example {
+  font-size: 14px;
+  opacity: 0.7;
+  font: italic;
+  margin-top: 10px;
+}
+
+.meaning h3 {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+
+li {
+  display: inline-block;
+  padding-right: 20px;
+  margin: 0;
+  font-size: 13px;
+}

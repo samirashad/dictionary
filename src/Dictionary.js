@@ -34,11 +34,10 @@ export default function Dictionary(props) {
               className="inputKeyWord"
               type="search"
               placeholder="Type a word"
-              size="40"
               onChange={handleKeyWordChange}
               defaultValue={props.defaultKeyWord}
             />
-            <button type="submit" className="btn btn-primary btn-md">
+            <button type="submit" className="btn btn-primary btn-lg">
               Search
             </button>
           </div>

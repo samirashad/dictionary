@@ -1,6 +1,7 @@
 import Meaning from "./Meaning";
 import { Fragment } from "react";
 import audio from "./images/audio.png";
+import "./Results.css";
 
 export default function Results(props) {
   if (props.data) {
@@ -10,23 +11,25 @@ export default function Results(props) {
     }
     return (
       <div className="results">
-        <div className="phonetics">
-          <h2 className="text-primary">{props.data.word}</h2>
+        <section className="phonetics">
+          <h2>{props.data.word}</h2>
           {props.data.phonetics.map((phonetic, index) => {
             return (
               <div key={index} className="d-flex mb-2">
-                <button
+                <img
+                  src={audio}
+                  alt="listen"
+                  width="30px"
+                  height="30px"
                   onClick={(event) => {
                     handleAudio(phonetic.audio, event);
                   }}
-                >
-                  <img src={audio} alt="listen" width="20px" />
-                </button>
+                />
                 <h4 className="ms-3">{phonetic.text}</h4>
               </div>
             );
           })}
-        </div>
+        </section>
         {props.data.meanings.map((meaning, index) => {
           return (
             <Fragment key={index}>

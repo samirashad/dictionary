@@ -1,9 +1,11 @@
 .App-header {
-  background-color: #282c34;
-  padding: 10px;
-  text-align: center;
+  padding: 20px;
 }
 
+body {
+  background-color: #f9f8fe;
+}
 .App-header .title {
-  color: white;
+  color: black;
+  text-align: center;
 }
