@@ -7,24 +7,45 @@ export default function Dictionary(props) {
   let [keyWord, setKeyWord] = useState(props.defaultKeyWord);
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
+  let [photos, setPhotos] = useState(null);
+
   const handleResponse = (response) => {
     setResults(response.data[0]);
   };
+
   const load = () => {
     setLoaded(true);
     search();
   };
+
+  const handlePexel = (response) => {
+    setPhotos(response.data.photos);
+    console.log(photos);
+  };
+
   const handleKeyWordChange = (event) => {
     setKeyWord(event.target.value);
   };
+
   const search = () => {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyWord}`;
     axios.get(apiUrl).then(handleResponse);
+    let pexelsApiKey =
+      "563492ad6f9170000100000199c19d74bfc34a36a37436fae2e592d3";
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyWord}&per_page=8`;
+    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+    axios
+      .get(pexelsApiUrl, {
+        headers: headers,
+      })
+      .then(handlePexel);
   };
+
   const handleSearch = (event) => {
     event.preventDefault();
     search();
   };
+
   if (loaded) {
     return (
       <div className="Dictionary">
@@ -42,7 +63,7 @@ export default function Dictionary(props) {
             </button>
           </div>
         </form>
-        <Results data={results} />
+        <Results results={results} photos={photos} />
       </div>
     );
   } else {
